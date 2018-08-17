@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "jsx": "react",
+    "module": "commonjs",
+    "declaration": true,
+    "strict": true,
+    "lib": ["es2015", "esnext.asynciterable"],
+    "outDir": "./dist",
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}
