@@ -131,7 +131,7 @@ export default class App extends React.Component {
       },
       {
         type: 'SECTION',
-        header: 'My third Section'.toUpperCase(),
+        header: 'My Third Section'.toUpperCase(),
         rows: [
           {
             type: 'SIMPLE',

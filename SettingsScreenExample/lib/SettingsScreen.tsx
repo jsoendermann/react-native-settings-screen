@@ -89,7 +89,19 @@ export class SettingsScreen extends React.Component<Props> {
         </SectionFooter>,
       )
     } else if (typeof section.footer === 'function') {
-      elements.push(section.footer())
+      if (!section.key) {
+        throw new Error(
+          `Sections with a render function passed as footer must have their key property set. (Offending section has header ${
+            section.header
+          })`,
+        )
+      }
+
+      elements.push(
+        <RenderedSectionFooterContainer key={section.key + '-footer'}>
+          {section.footer()}
+        </RenderedSectionFooterContainer>,
+      )
     }
 
     return elements
@@ -146,4 +158,8 @@ const SectionFooter = styled.Text`
   font-size: 15;
   color: #999;
   margin-horizontal: 15;
+`
+
+const RenderedSectionFooterContainer = styled.View`
+  align-self: stretch;
 `

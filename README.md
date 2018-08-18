@@ -1,6 +1,6 @@
 # React Native Settings Screen
 
-This library takes a json object that describes your settings screen and turns it into a component tree ready to be used.
+This library takes a JavaScript object that describes your settings and turns it into a beautiful component ready to be used.
 
 ![react-native-settings-screen ios](https://raw.githubusercontent.com/jsoendermann/react-native-settings-screen/master/imgs/ios.png)
 ![react-native-settings-screen android](https://github.com/jsoendermann/react-native-settings-screen/raw/master/imgs/android.png)
@@ -18,7 +18,7 @@ If you already have `react-native-vector-icons` in your dependency, just run `ya
 
 `import { SettingsScreen } from "react-native-settings-screen"`
 
-`SettingsScreen` currently takes two props: an optional `globalTextStyle` that is applied to all text on the settings screen and `data`, an object that describes the content of your settings. You can learn more about the format of this object [in this file](https://github.com/jsoendermann/react-native-settings-screen/blob/master/SettingsScreenExample/lib/types.ts). The screen on the example screenshots above was generated from this object:
+`SettingsScreen` takes a `data` prop; an object that describes the content of your settings. You can learn more about the format of this object [in this file](https://github.com/jsoendermann/react-native-settings-screen/blob/master/SettingsScreenExample/lib/types.ts). The screen on the example screenshots above was generated from this object:
 
 ```javascript
 const data: SettingsData = [
@@ -121,7 +121,7 @@ const data: SettingsData = [
   },
   {
     type: 'SECTION',
-    header: 'My third Section'.toUpperCase(),
+    header: 'My Third Section'.toUpperCase(),
     rows: [
       {
         type: 'SIMPLE',
