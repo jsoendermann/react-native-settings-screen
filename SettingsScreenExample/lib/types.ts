@@ -1,15 +1,15 @@
 import { TextStyle } from 'react-native'
 
 export type SettingsData = SettingsDatum[]
-export type SettingsDatum = CustomView | Section
+export type SettingsDatum = CustomViewData | SectionData
 
-export interface CustomView {
+export interface CustomViewData {
   type: 'CUSTOM_VIEW'
   key?: string
   render: () => React.ReactElement<any>
 }
 
-export interface Section {
+export interface SectionData {
   type: 'SECTION'
   key?: string
   header?: string

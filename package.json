@@ -15,7 +15,6 @@
   "devDependencies": {
     "@types/react-native": "^0.56.9",
     "@types/react-native-vector-icons": "^4.6.3",
-    "react-native-vector-icons": "^5.0.0",
     "typescript": "^3.0.1"
   },
   "peerDependencies": {
