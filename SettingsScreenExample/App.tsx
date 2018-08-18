@@ -1,8 +1,17 @@
 import * as React from 'react'
-import { StyleSheet, Text, View, StatusBar, Image } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  Image,
+  Platform,
+} from 'react-native'
 import Icon from 'react-native-vector-icons/Entypo'
 
 import { SettingsScreen, SettingsData } from './lib'
+
+const fontFamily = Platform.OS === 'ios' ? 'Avenir' : 'sans-serif'
 
 export default class App extends React.Component {
   renderHero = () => (
@@ -142,7 +151,7 @@ export default class App extends React.Component {
               color: '#999',
               marginBottom: 40,
               marginTop: -30,
-              fontFamily: 'Avenir',
+              fontFamily,
             }}
           >
             v1.2.3
@@ -152,18 +161,17 @@ export default class App extends React.Component {
     ]
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar barStyle="light-content" backgroundColor="#8c231a" />
         <View style={styles.navBar}>
           <Text style={styles.navBarTitle}>Settings</Text>
         </View>
-        <SettingsScreen
-          data={data}
-          globalTextStyle={{ fontFamily: 'Avenir' }}
-        />
+        <SettingsScreen data={data} globalTextStyle={{ fontFamily }} />
       </View>
     )
   }
 }
+
+const statusBarHeight = Platform.OS === 'ios' ? 35 : 0
 
 const styles = StyleSheet.create({
   container: {
@@ -173,15 +181,15 @@ const styles = StyleSheet.create({
   },
   navBar: {
     backgroundColor: '#8c231c',
-    height: 44 + 35,
+    height: 44 + statusBarHeight,
     alignSelf: 'stretch',
-    paddingTop: 35,
+    paddingTop: statusBarHeight,
     justifyContent: 'center',
     alignItems: 'center',
   },
   navBarTitle: {
     color: 'white',
-    fontFamily: 'Avenir',
+    fontFamily,
     fontSize: 17,
   },
   heroContainer: {
@@ -205,12 +213,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   heroTitle: {
-    fontFamily: 'Avenir',
+    fontFamily,
     color: 'black',
     fontSize: 24,
   },
   heroSubtitle: {
-    fontFamily: 'Avenir',
+    fontFamily,
     color: '#999',
     fontSize: 14,
   },
