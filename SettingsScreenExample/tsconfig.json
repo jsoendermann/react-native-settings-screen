@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "sourceMap": false,
+    "jsx": "react-native",
+    "outDir": "dist",
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "es7"],
+    "skipLibCheck": true
+  },
+  "include": ["App.tsx", "lib/*.tsx", "lib/*.ts"]
+}

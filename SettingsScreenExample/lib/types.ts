@@ -1,4 +1,7 @@
-export type Item = CustomView | Section
+import { TextStyle } from 'react-native'
+
+export type SettingsData = SettingsDatum[]
+export type SettingsDatum = CustomView | Section
 
 export interface CustomView {
   type: 'CUSTOM_VIEW'
@@ -8,19 +11,19 @@ export interface CustomView {
 
 export interface Section {
   type: 'SECTION'
-  key: string
+  key?: string
   header?: string
   footer?: string | (() => React.ReactElement<any>)
-  rows: Row[]
+  rows: RowData[]
 }
 
-type Row = SimpleRow | SwitchRow | TextRow | CustomViewRow
+export type RowData = SimpleRow | SwitchRow | TextRow | CustomRow
 
 export interface IRow {
   title: string
-  onPress: () => void
+  onPress?: () => void
   subtitle?: string
-  hasDisclosureIndicator?: boolean
+  showDisclosureIndicator?: boolean
 }
 
 export interface SimpleRow extends IRow {
@@ -38,9 +41,10 @@ export interface SwitchRow extends IRow {
 export interface TextRow extends IRow {
   type: 'TEXT'
   text: string
+  textStyle?: TextStyle
 }
 
-export interface CustomViewRow extends IRow {
-  type: 'CUSTOM_VIEW'
-  renderView: () => React.ReactElement<any>
+export interface CustomRow extends IRow {
+  type: 'CUSTOM'
+  render: () => React.ReactElement<any>
 }
