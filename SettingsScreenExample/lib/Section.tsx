@@ -32,6 +32,7 @@ export const Section = ({ section, globalTextStyle }: SectionProps) => {
         rowData={rowData}
         isFirst={isFirst}
         isLast={isLast}
+        globalTextStyle={globalTextStyle}
       />,
     )
   }

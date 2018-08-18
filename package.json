@@ -1,6 +1,6 @@
 {
   "name": "react-native-settings-screen",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
