@@ -64,7 +64,7 @@ export const Section = ({ section, globalTextStyle }: SectionProps) => {
 
 const SectionContainer = styled.View`
   align-items: stretch;
-  margin-bottom: 50;
+  margin-bottom: 40;
 `
 
 const SectionHeader = styled.Text`
