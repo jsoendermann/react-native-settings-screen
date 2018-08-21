@@ -24,6 +24,7 @@ export interface IRow {
   onPress?: () => void
   subtitle?: string
   showDisclosureIndicator?: boolean
+  titleStyle?: TextStyle
 }
 
 export interface SimpleRow extends IRow {

@@ -20,7 +20,7 @@ export const Row = ({
   globalTextStyle,
 }: RowProps) => {
   const rowSkeletonProps = {
-    titleStyles: [globalTextStyle],
+    titleStyles: [globalTextStyle, rowData.titleStyle],
     subtitleStyles: [globalTextStyle],
     isFirst,
     isLast,

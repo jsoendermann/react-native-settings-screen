@@ -136,8 +136,11 @@ export default class App extends React.Component {
           {
             type: 'SIMPLE',
             onPress: () => {},
-            title: 'Single row',
+            title: 'Different title style',
             showDisclosureIndicator: true,
+            titleStyle: {
+              color: 'red',
+            },
           },
         ],
       },
