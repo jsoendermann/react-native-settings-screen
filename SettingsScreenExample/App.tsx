@@ -6,6 +6,7 @@ import {
   StatusBar,
   Image,
   Platform,
+  RefreshControl,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Entypo'
 
@@ -14,6 +15,9 @@ import { SettingsScreen, SettingsData } from './lib'
 const fontFamily = Platform.OS === 'ios' ? 'Avenir' : 'sans-serif'
 
 export default class App extends React.Component {
+  state = {
+    refreshing: false,
+  }
   renderHero = () => (
     <View style={styles.heroContainer}>
       <Image source={require('../jan.jpg')} style={styles.heroImage} />
@@ -168,7 +172,21 @@ export default class App extends React.Component {
         <View style={styles.navBar}>
           <Text style={styles.navBarTitle}>Settings</Text>
         </View>
-        <SettingsScreen data={data} globalTextStyle={{ fontFamily }} />
+        <SettingsScreen
+          data={data}
+          globalTextStyle={{ fontFamily }}
+          scrollViewProps={{
+            refreshControl: (
+              <RefreshControl
+                refreshing={this.state.refreshing}
+                onRefresh={() => {
+                  this.setState({ refreshing: true })
+                  setTimeout(() => this.setState({ refreshing: false }), 3000)
+                }}
+              />
+            ),
+          }}
+        />
       </View>
     )
   }

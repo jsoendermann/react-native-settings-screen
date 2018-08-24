@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, ViewStyle, TextStyle } from 'react-native'
+import { View, ViewStyle, TextStyle, ScrollViewProps } from 'react-native'
 import styled from 'styled-components/native'
 
 import { Section } from './Section'
@@ -9,9 +9,12 @@ export interface Props {
   style?: ViewStyle
   data: SettingsData
   globalTextStyle?: TextStyle
+  scrollViewProps?: Partial<ScrollViewProps>
 }
 
 export class SettingsScreen extends React.Component<Props> {
+  state = { refreshing: false }
+
   render() {
     const elements = this.props.data.map((item, i) => {
       switch (item.type) {
@@ -28,10 +31,13 @@ export class SettingsScreen extends React.Component<Props> {
       }
     })
 
+    const scrollViewProps: ScrollViewProps = {
+      ...(this.props.scrollViewProps || {}),
+      style: this.props.style,
+    }
+
     return (
-      <SettingsScrollView style={this.props.style}>
-        {elements}
-      </SettingsScrollView>
+      <SettingsScrollView {...scrollViewProps}>{elements}</SettingsScrollView>
     )
   }
 }
