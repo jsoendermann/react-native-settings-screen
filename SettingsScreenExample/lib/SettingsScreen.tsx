@@ -2,8 +2,16 @@ import * as React from 'react'
 import { View, ViewStyle, TextStyle, ScrollViewProps } from 'react-native'
 import styled from 'styled-components/native'
 
-import { Section } from './Section'
-import { SettingsData } from './types'
+import { Section, SectionData } from './Section'
+
+export type SettingsData = SettingsDatum[]
+export type SettingsDatum = CustomViewData | SectionData
+
+export interface CustomViewData {
+  type: 'CUSTOM_VIEW'
+  key?: string
+  render: () => React.ReactElement<any>
+}
 
 export interface Props {
   style?: ViewStyle
