@@ -30,43 +30,35 @@ const data: SettingsData = [
       'Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
     rows: [
       {
-        type: 'SIMPLE',
         title: 'A row',
-        onPress: () => {},
         showDisclosureIndicator: true,
       },
-      { type: 'SIMPLE', title: 'A non-tappable row' },
+      { title: 'A non-tappable row' },
       {
-        type: 'SIMPLE',
-        onPress: () => {},
         title: 'This row has a',
         subtitle: 'Subtitle',
         showDisclosureIndicator: true,
       },
       {
-        type: 'SIMPLE',
-        onPress: () => {},
         title: 'Long title. So long long long long long long long',
         subtitle:
           'And so is the subtitle. Even longer longer longer longer longer',
       },
       {
-        type: 'SWITCH',
         title: 'Switch',
-        value: true,
-        onValueChange: () => {},
+        renderAccessory: () => <Switch value onValueChange={() => {}} />,
       },
       {
-        type: 'TEXT',
-        onPress: () => {},
         title: 'Text',
-        text: 'Maybe',
+        renderAccessory: () => (
+          <Text style={{ color: '#999', marginRight: 6, fontSize: 18 }}>
+            Maybe
+          </Text>
+        ),
       },
       {
-        type: 'CUSTOM',
-        onPress: () => {},
         title: 'Custom view',
-        render: () => (
+        renderAccessory: () => (
           <View
             style={{
               width: 30,
@@ -84,30 +76,30 @@ const data: SettingsData = [
     header: 'My Other Section'.toUpperCase(),
     rows: [
       {
-        type: 'SIMPLE',
-        onPress: () => {},
         title: 'Dolor Nullam',
         showDisclosureIndicator: true,
       },
       {
-        type: 'TEXT',
-        onPress: () => {},
         title: 'Nulla vitae elit libero',
-        text: 'Dapibus',
+        renderAccessory: () => (
+          <Text style={{ color: '#999', marginRight: 6, fontSize: 18 }}>
+            Dapibus
+          </Text>
+        ),
       },
       {
-        type: 'TEXT',
-        onPress: () => {},
         title: 'Ipsum Lorem Venenatis',
         subtitle: 'Vestibulum Inceptos Fusce Justo',
-        text: 'Yes',
+        renderAccessory: () => (
+          <Text style={{ color: '#999', marginRight: 6, fontSize: 18 }}>
+            Yes
+          </Text>
+        ),
         showDisclosureIndicator: true,
       },
       {
-        type: 'CUSTOM',
-        onPress: () => {},
         title: 'Cras Euismod',
-        render: () => (
+        renderAccessory: () => (
           <Icon
             style={{ marginTop: 3, marginRight: 6 }}
             name="colours"
@@ -124,10 +116,11 @@ const data: SettingsData = [
     header: 'My Third Section'.toUpperCase(),
     rows: [
       {
-        type: 'SIMPLE',
-        onPress: () => {},
-        title: 'Single row',
+        title: 'Different title style',
         showDisclosureIndicator: true,
+        titleStyle: {
+          color: 'red',
+        },
       },
     ],
   },
