@@ -1,25 +1,24 @@
 {
   "name": "react-native-settings-screen",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "license": "Apache-2.0",
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
+  "main": "./dist/lib/index.js",
+  "typings": "./dist/lib/index.d.ts",
   "scripts": {
     "build": "tsc --pretty",
     "watch": "tsc --watch --pretty",
     "prepare": "npm run build"
   },
   "dependencies": {
-    "styled-components": "^3.4.2"
+    "styled-components": "^3.4.5"
   },
   "devDependencies": {
-    "@types/react-native": "^0.56.9",
+    "@types/react-native": "^0.56.17",
     "@types/react-native-vector-icons": "^4.6.3",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.3"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*",
-    "react-native-vector-icons": "*"
+    "react-native": "*"
   }
 }

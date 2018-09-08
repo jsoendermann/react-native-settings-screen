@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { StyleSheet, View, TouchableOpacity, TextStyle } from 'react-native'
 import styled from 'styled-components/native'
-import Icon from 'react-native-vector-icons/Entypo'
+
+import { Chevron } from './Chevron'
 
 export interface RowData {
   title: string
@@ -53,16 +54,7 @@ export const Row = ({
           <View />
         </TitlesContainer>
         {renderAccessory && renderAccessory()}
-        {showDisclosureIndicator ? (
-          <Icon
-            style={{ marginTop: 3, marginRight: 6 }}
-            name="chevron-small-right"
-            size={25}
-            color="#bbb"
-          />
-        ) : (
-          <View style={{ width: 10 }} />
-        )}
+        {showDisclosureIndicator ? <Chevron /> : <View style={{ width: 10 }} />}
       </ContentContainer>
       {isLast && <BottomBorder />}
     </Container>

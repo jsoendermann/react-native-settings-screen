@@ -7,12 +7,15 @@ This library takes a JavaScript object that describes your settings and turns it
 
 ## Installation
 
-This package is pure JavaScript but it has a peer dependency on `react-native-vector-icons`.
+    yarn add react-native-settings-screen
 
-    yarn add react-native-settings-screen react-native-vector-icons
-    react-native link react-native-vector-icons
+## Run Example
 
-If you already have `react-native-vector-icons` in your dependency, just run `yarn add react-native-settings-screen`.
+    git clone https://github.com/jsoendermann/react-native-settings-screen
+    cd react-native-settings-screen/SettingsScreenExample
+    yarn install
+    yarn build
+    react-native run-ios
 
 ## Usage
 

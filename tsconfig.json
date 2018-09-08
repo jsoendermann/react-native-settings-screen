@@ -6,7 +6,7 @@
     "declaration": true,
     "strict": true,
     "lib": ["es2015", "esnext.asynciterable"],
-    "outDir": "./dist",
+    "outDir": "./dist/lib",
     "skipLibCheck": true
   },
   "include": [
