@@ -21,7 +21,7 @@ This library takes a JavaScript object that describes your settings and turns it
 
 `import { SettingsScreen } from "react-native-settings-screen"`
 
-`SettingsScreen` takes a `data` prop; an object that describes the content of your settings. You can learn more about the format of this object [in this file](https://github.com/jsoendermann/react-native-settings-screen/blob/master/SettingsScreenExample/lib/types.ts). The screen on the example screenshots above was generated from this object:
+`SettingsScreen` takes a `data` prop; an object that describes the content of your settings. You can learn more about the format of this object [in this file](https://github.com/jsoendermann/react-native-settings-screen/blob/master/SettingsScreenExample/App.tsx). The screen on the example screenshots above was generated from this object:
 
 ```javascript
 const data: SettingsData = [
