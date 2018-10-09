@@ -10,12 +10,11 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "styled-components": "^3.4.5"
+    "styled-components": "^3.4.9"
   },
   "devDependencies": {
-    "@types/react-native": "^0.56.17",
-    "@types/react-native-vector-icons": "^4.6.3",
-    "typescript": "^3.0.3"
+    "@types/react-native": "^0.57.4",
+    "typescript": "^3.1.1"
   },
   "peerDependencies": {
     "react": "*",
