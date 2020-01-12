@@ -1,6 +1,6 @@
 {
-  "name": "@gerwim/react-native-settings-screen",
-  "version": "2.2.0",
+  "name": "react-native-settings-screen",
+  "version": "2.1.2",
   "license": "Apache-2.0",
   "main": "./dist/lib/index.js",
   "typings": "./dist/lib/index.d.ts",
@@ -19,13 +19,5 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gerwim/react-native-settings-screen.git"
-  },
-  "bugs": {
-    "url": "https://github.com/gerwim/react-native-settings-screen/issues"
-  },
-  "homepage": "https://github.com/gerwim/react-native-settings-screen#readme"
+  }
 }
