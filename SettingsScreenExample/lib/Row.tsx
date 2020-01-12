@@ -11,7 +11,8 @@ export interface RowData {
   subtitleStyle?: TextStyle
   onPress?: () => void
   showDisclosureIndicator?: boolean
-  renderAccessory?: () => React.ReactElement<any>
+  renderAccessory?: () => React.ReactElement<any>,
+  visible?: boolean,
 }
 
 export interface Props extends RowData {
@@ -27,6 +28,7 @@ export const Row = ({
   onPress,
   showDisclosureIndicator,
   renderAccessory,
+  visible,
 
   titleStyles,
   subtitleStyles,
@@ -34,6 +36,7 @@ export const Row = ({
   isLast,
 }: Props) => {
   let ContentContainer = onPress ? TouchableOpacity : View
+  if (visible === false) return null;
 
   return (
     <Container height={subtitle ? 56 : 46}>
