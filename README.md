@@ -29,6 +29,7 @@ const data: SettingsData = [
   {
     type: 'SECTION',
     header: 'My Section'.toUpperCase(),
+    visible: true,
     footer:
       'Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
     rows: [
@@ -41,6 +42,7 @@ const data: SettingsData = [
         title: 'This row has a',
         subtitle: 'Subtitle',
         showDisclosureIndicator: true,
+        visible: myPermissionCheckFunction(),
       },
       {
         title: 'Long title. So long long long long long long long',

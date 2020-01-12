@@ -10,6 +10,7 @@ export type SettingsDatum = CustomViewData | SectionData
 export interface CustomViewData {
   type: 'CUSTOM_VIEW'
   key?: string
+  visible?: boolean,
   render: () => React.ReactElement<any>
 }
 
@@ -24,7 +25,7 @@ export class SettingsScreen extends React.Component<Props> {
   state = { refreshing: false }
 
   render() {
-    const elements = this.props.data.map((item, i) => {
+    const elements = this.props.data.filter(x => x.visible !== false).map((item, i) => {
       switch (item.type) {
         case 'CUSTOM_VIEW':
           return <View key={item.key || i}>{item.render()}</View>

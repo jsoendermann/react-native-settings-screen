@@ -9,6 +9,7 @@ export interface SectionData {
   key?: string
   header?: string
   footer?: string | (() => React.ReactElement<any>)
+  visible?: boolean,
   rows: RowData[]
 }
 
@@ -41,6 +42,7 @@ export const Section = ({ section, globalTextStyle }: SectionProps) => {
         subtitleStyles={[globalTextStyle, rowData.subtitleStyle]}
         isFirst={isFirst}
         isLast={isLast}
+        visible={rowData.visible}
       />,
     )
   }
